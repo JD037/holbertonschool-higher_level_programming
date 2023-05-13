@@ -1,30 +1,23 @@
-# Python Data Structures
+# Python - Data Structures
 
-This project includes Python scripts demonstrating basic data structure manipulation.
+This directory contains tasks related to data structures in Python, such as lists and tuples.
 
-## Files
+## Tasks
 
-- `0-print_list_integer.py`: This script contains a function `print_list_integer(my_list=[])` that prints all integers in a list, one per line.
-- `1-element_at.py`: This script contains a function `element_at(my_list, idx)` that retrieves an element from a list at a given index. If the index is negative or out of range, the function returns `None`.
-- `2-replace_in_list.py`: This script contains a function `replace_in_list(my_list, idx, element)` that replaces an element in a list at a specific position. If the index is negative or out of range, the function does not modify anything and returns the original list.
-- `3-print_reversed_list_integer.py`: This script contains a function `print_reversed_list_integer(my_list=[])` that prints all integers of a list, in reverse order, one per line.
-- `4-new_in_list.py`: This script contains a function `new_in_list(my_list, idx, element)` that replaces an element in a list at a specific position without modifying the original list. If the index is negative or out of range, the function returns a copy of the original list.
+1. `0-print_list_integer.py`: Function that prints all integers of a list.
+2. `1-element_at.py`: Function that retrieves an element from a list.
+3. `2-replace_in_list.py`: Function that replaces an element of a list at a specific position.
+4. `3-print_reversed_list_integer.py`: Function that prints all integers of a list, in reverse order.
+5. `4-new_in_list.py`: Function that replaces an element in a list at a specific position without modifying the original list.
+6. `5-no_c.py`: Function that removes all characters c and C from a string.
+7. `6-print_matrix_integer.py`: Function that prints a matrix of integers.
+8. `7-add_tuple.py`: Function that adds 2 tuples.
+9. `8-multiple_returns.py`: Function that returns a tuple with the length of a string and its first character.
+10. `9-max_integer.py`: Function that finds the biggest integer of a list.
+11. `10-divisible_by_2.py`: Function that finds all multiples of 2 in a list.
+12. `11-delete_at.py`: Function that deletes the item at a specific position in a list.
+13. `12-switch.py`: Python script that switches the values of `a` and `b`.
 
-## Usage
+## Author
 
-Run the Python scripts on the command line as follows:
-
-$ ./0-print_list_integer.py
-$ ./1-element_at.py
-$ ./2-replace_in_list.py
-$ ./3-print_reversed_list_integer.py
-$ ./4-new_in_list.py
-
-Make sure to give execute permissions to the scripts before running:
-
-$ chmod +x 0-print_list_integer.py
-$ chmod +x 1-element_at.py
-$ chmod +x 2-replace_in_list.py
-$ chmod +x 3-print_reversed_list_integer.py
-$ chmod +x 4-new_in_list.py
-
+Josh Davis
