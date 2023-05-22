@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 """Module for Square class"""
 
+
 class Square:
     """Square class with size and position attributes"""
-    
+
     def __init__(self, size=0, position=(0, 0)):
         """Initialize Square with size and position"""
         self.size = size
