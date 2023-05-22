@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 # Write class square defing a square: 
-"""Module to define a square"""
+"""Module to define a Square"""
 
 
 class Square:
