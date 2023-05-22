@@ -27,7 +27,7 @@ class Square:
         """Set the size of the square
 
         Args:
-            value (int): The new size of the square.
+            value (int): The new size of the square.1~
 
         Raises:
             TypeError: If value is not an integer.
@@ -43,3 +43,11 @@ class Square:
     def area(self):
         """Return the current square area"""
         return self.__size ** 2
+
+    def my_print(self):
+        """Print the square with the # character"""
+        if self.__size == 0:
+            print()
+        else:
+            for _ in range(self.__size):
+                print("#" * self.__size)
