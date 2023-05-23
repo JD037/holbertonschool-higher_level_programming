@@ -35,3 +35,6 @@ Test the function print_square with the following inputs:
 
 7. Input: "abc"
    Output: raises a TypeError with the message 'size must be an integer'
+
+8. Input: None
+   Output: raises a TypeError with the message 'missing one argument'
