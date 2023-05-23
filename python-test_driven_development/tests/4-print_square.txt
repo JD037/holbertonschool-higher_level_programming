@@ -1,0 +1,37 @@
+Test the function print_square with the following inputs:
+
+1. Input: 4
+   Output:
+   ####
+   ####
+   ####
+   ####
+
+2. Input: 10
+   Output:
+   ##########
+   ##########
+   ##########
+   ##########
+   ##########
+   ##########
+   ##########
+   ##########
+   ##########
+   ##########
+
+3. Input: 0
+   Output:
+
+4. Input: 1
+   Output:
+   #
+
+5. Input: -1
+   Output: raises a ValueError with the message 'size must be >= 0'
+
+6. Input: -1.5
+   Output: raises a TypeError with the message 'size must be an integer'
+
+7. Input: "abc"
+   Output: raises a TypeError with the message 'size must be an integer'
