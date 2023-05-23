@@ -3,8 +3,6 @@
 This module contains a function that adds two integers.
 """
 
-import math
-
 
 def add_integer(a, b=98):
     """
@@ -24,18 +22,17 @@ def add_integer(a, b=98):
         raise TypeError("a must be an integer")
     if not isinstance(b, (int, float)):
         raise TypeError("b must be an integer")
-    if math.isnan(a):
-        raise TypeError("a cannot be NaN")
-    if math.isnan(b):
-        raise TypeError("b cannot be NaN")
 
-    try:
-        a = int(a)
-    except OverflowError:
-        raise TypeError("a too large to convert to int")
-    try:
-        b = int(b)
-    except OverflowError:
-        raise TypeError("b too large to convert to int")
+    if isinstance(a, float):
+        if a != a or a == float('inf') or a == -float('inf'):
+            raise TypeError("a must be an integer")
+        else:
+            a = int(a)
+
+    if isinstance(b, float):
+        if b != b or b == float('inf') or b == -float('inf'):
+            raise TypeError("b must be an integer")
+        else:
+            b = int(b)
 
     return a + b
