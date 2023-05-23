@@ -89,7 +89,7 @@ class Rectangle:
         if self.width == 0 or self.height == 0:
             return ""
         symbol = str(self.print_symbol)
-        return (symbol * self.width + '\n') * self.height
+        return ((symbol * self.width + '\n') * self.height).rstrip()
 
     def __repr__(self):
         """Return a string representation of the Rectangle creation command."""
