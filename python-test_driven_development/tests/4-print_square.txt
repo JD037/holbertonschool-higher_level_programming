@@ -1,40 +1,36 @@
-Test the function print_square with the following inputs:
+Test file for 4-print_square.py
 
-1. Input: 4
-   Output:
-   ####
-   ####
-   ####
-   ####
+Module level:
+>>> print_square = __import__('4-print_square').print_square
 
-2. Input: 10
-   Output:
-   ##########
-   ##########
-   ##########
-   ##########
-   ##########
-   ##########
-   ##########
-   ##########
-   ##########
-   ##########
+Print a 4x4 square:
+>>> print_square(4)
+####
+####
+####
+####
 
-3. Input: 0
-   Output:
+Print a 1x1 square:
+>>> print_square(1)
+#
 
-4. Input: 1
-   Output:
-   #
+Zero size square:
+>>> print_square(0)
 
-5. Input: -1
-   Output: raises a ValueError with the message 'size must be >= 0'
+A TypeError should be raised when size is not an integer:
+>>> print_square("2")
+Traceback (most recent call last):
+  ...
+TypeError: size must be an integer
 
-6. Input: -1.5
-   Output: raises a TypeError with the message 'size must be an integer'
+A ValueError should be raised when size is less than 0:
+>>> print_square(-4)
+Traceback (most recent call last):
+  ...
+ValueError: size must be >= 0
 
-7. Input: "abc"
-   Output: raises a TypeError with the message 'size must be an integer'
-
-8. Input: None
-   Output: raises a TypeError with the message 'missing one argument'
+A TypeError should be raised when size is a float less than 0:
+>>> print_square(-4.5)
+Traceback (most recent call last):
+  ...
+TypeError: size must be an integer
