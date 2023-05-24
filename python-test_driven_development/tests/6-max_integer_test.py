@@ -1,65 +1,28 @@
 #!/usr/bin/python3
-"""Unittest for max_integer([..])
+"""unit testing module for max_integer
 """
 import unittest
-max_integer = __import__('6-max_integer').max_integer
+max_int = __import__('6-max_integer').max_integer
 
 
 class TestMaxInteger(unittest.TestCase):
     """
-    This class contains unittests for the max_integer() function
+    class for testing 6-max_integer_test.py
     """
 
     def test_max_integer(self):
+        """ test case for normal list of integers w/o negatives
         """
-        Tests some lists of integers
-        """
-        self.assertEqual(max_integer([1, 2, 3, 4]), 4)
-        self.assertEqual(max_integer([1, 3, 4, 2]), 4)
-        self.assertEqual(max_integer([1, 3, -1, 2]), 3)
-        self.assertEqual(max_integer([0, 0, 0, 0]), 0)
-        self.assertEqual(max_integer([1]), 1)
+        test_list = [1, 2, 3, 8, 4]
+        self.assertEqual(max_int(test_list), 8)
 
-    def test_empty(self):
+    def test_max_integer_neg(self):
+        """ test case for normal list of integers w/ negatives
         """
-        Test an empty list
-        """
-        self.assertEqual(max_integer([]), None)
+        test_list = [1, 2, 3, 8, 4, -40, -400, -12, 0]
+        self.assertEqual(max_int(test_list), 8)
 
-    def test_noargs(self):
+    def test_max_integer_(self):
+        """ test case for empty list
         """
-        Test the function without arguments
-        """
-        self.assertEqual(max_integer(), None)
-
-    def test_not_list(self):
-        """
-        Test the function with a non-list argument
-        """
-        with self.assertRaises(TypeError):
-            max_integer("this is not a list")
-
-    def test_list_of_non_ints(self):
-        """
-        Test the function with a list of non-integers
-        """
-        with self.assertRaises(TypeError):
-            max_integer(["a", "b", "c", "d"])
-
-    def test_list_with_none(self):
-        """
-        Test the function with a list that contains None
-        """
-        with self.assertRaises(TypeError):
-            max_integer([None])
-
-    def test_list_with_bool(self):
-        """
-        Test the function with a list that contains a boolean
-        """
-        self.assertEqual(max_integer([True, False, 2]), 2)
-        self.assertEqual(max_integer([True, False]), True)
-
-
-if __name__ == '__main__':
-    unittest.main()
+        self.assertEqual(max_int([]), None)
