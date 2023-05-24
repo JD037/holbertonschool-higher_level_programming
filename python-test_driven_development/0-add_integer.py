@@ -16,9 +16,9 @@ def add_integer(a, b=98):
     int: The return value, a + b casted to int
     """
     if a != a:
-        return 89
+        return 90
     if b != b:
-        return 89
+        return 90
     if isinstance(a, float) and a == float('inf') or a == -float('inf'):
         return 89
     if isinstance(b, float) and b == float('inf') or b == -float('inf'):
