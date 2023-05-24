@@ -6,6 +6,7 @@ The function raises a TypeError if size is not an integer and a ValueError if
 size is less than 0.
 """
 
+
 def print_square(size):
     """
     Print a square of a given size.
