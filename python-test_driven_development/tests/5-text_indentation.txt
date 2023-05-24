@@ -1,23 +1,24 @@
-Test the function text_indentation with the following inputs:
+"""
+This is the test file for the text_indentation module.
 
-1. Input: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quonam modo? Utrum igitur tibi litteram videor an totas paginas commovere? Non autem hoc: igitur ne illud quidem. Fortasse id optimum, sed ubi illud: Plus semper voluptatis?"
-   Output: 
-   "Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-   
-   Quonam modo?
-   
-   Utrum igitur tibi litteram videor an totas paginas commovere?
-   
-   Non autem hoc:
-   
-   igitur ne illud quidem.
-   
-   Fortasse id optimum, sed ubi illud:
-   
-   Plus semper voluptatis?"
+>>> text_indentation("Holberton.School")
+Holberton.
+<BLANKLINE>
+School
+>>> text_indentation("Holberton. School? How are you: John")
+Holberton.
+<BLANKLINE>
+School?
+<BLANKLINE>
+How are you:
+<BLANKLINE>
+John
+>>> text_indentation("")
+<BLANKLINE>
+>>> text_indentation("   ")
+<BLANKLINE>
+"""
 
-2. Input: "This is a string without any special characters"
-   Output: "This is a string without any special characters"
-
-3. Input: 1234
-   Output: raises a TypeError with the message 'text must be a string'
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod()

@@ -1,19 +1,19 @@
 #!/usr/bin/python3
-"""
-Module for function text_indentation
-"""
+"""Module for text_indentation function"""
 
 
 def text_indentation(text):
-    """
-    Function to add two new lines after characters: ., ? and :
+    """Function that indents text after each '.', '?' and ':'.
 
     Args:
-        text (str): The string to be processed
+    text (str): The text to indent.
+
+    Raises:
+    TypeError: If text is not a string.
     """
     if type(text) is not str:
         raise TypeError("text must be a string")
-    
+
     special_chars = ['.', '?', ':']
     new_text = ""
     for i, char in enumerate(text):
