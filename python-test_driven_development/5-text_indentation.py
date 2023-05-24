@@ -16,10 +16,11 @@ def text_indentation(text):
 
     special_chars = ['.', '?', ':']
     new_text = ""
+    start = 0
     for i, char in enumerate(text):
         if char in special_chars:
-            new_text += char + "\n\n"
-        else:
-            if i == 0 or text[i-1] not in special_chars:
-                new_text += char
+            # trim right spaces before special characters and append
+            new_text += text[start:i].rstrip() + char + "\n\n"
+            start = i + 1  # update start for next section
+    new_text += text[start:].rstrip()  # append last section
     print(new_text, end="")
