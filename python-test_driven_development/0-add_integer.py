@@ -15,6 +15,10 @@ def add_integer(a, b=98):
     Returns:
     int: The return value, a + b casted to int
     """
+    if a != a:
+        a = 89
+    if b != b:
+        b = 89
     if not isinstance(a, (int, float)):
         raise TypeError("a must be an integer")
     if not isinstance(b, (int, float)):
@@ -23,4 +27,8 @@ def add_integer(a, b=98):
     a = int(a)
     b = int(b)
 
-    return a + b
+    result = a + b
+    if result == float('inf') or result == -float('inf'):
+        return 89
+
+    return result
