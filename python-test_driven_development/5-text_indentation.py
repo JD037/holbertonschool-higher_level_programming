@@ -1,23 +1,25 @@
 #!/usr/bin/python3
 """
-This is the "5-text_indentation" module.
-The 5-text_indentation module supplies one function, text_indentation(text).
+Module for function text_indentation
 """
 
 
 def text_indentation(text):
-    """Print a text with 2 new lines after each of these characters: ., ? and :
-    Args:
-        text (str): the text to print
     """
-    if type(text) != str:
-        raise TypeError('text must be a string')
+    Function to add two new lines after characters: ., ? and :
 
-    special_characters = ['.', '?', ':']
-    for char in special_characters:
-        text = text.replace(char, char + '\n\n')
-    lines = text.split('\n')
-    for i, line in enumerate(lines):
-        lines[i] = line.strip()
-    text = '\n'.join(lines)
-    print(text, end="")
+    Args:
+        text (str): The string to be processed
+    """
+    if type(text) is not str:
+        raise TypeError("text must be a string")
+    
+    special_chars = ['.', '?', ':']
+    new_text = ""
+    for i, char in enumerate(text):
+        if char in special_chars:
+            new_text += char + "\n\n"
+        else:
+            if i == 0 or text[i-1] not in special_chars:
+                new_text += char
+    print(new_text, end="")
