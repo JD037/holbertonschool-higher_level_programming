@@ -7,6 +7,10 @@
 100
 >>> add_integer(100.3, -2)
 98
+>>> add_integer(float('inf'), 1)
+89
+>>> add_integer(float('NaN'), 1)
+90
 >>> add_integer(4, "School")
 Traceback (most recent call last):
   ...
