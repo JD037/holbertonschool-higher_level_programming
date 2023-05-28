@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-#create MyList class that inheirits from list
 """This module contains the class MyList."""
 
 
