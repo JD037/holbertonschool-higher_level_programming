@@ -1,8 +1,8 @@
-#Python - Inheritance
-##Project Overview
+# Python - Inheritance
+## Project Overview
 This project explores the concept of inheritance in Python. It includes multiple tasks, each building upon the last to illustrate various aspects of inheritance.
 
-##Tasks
+## Tasks
 Here are brief descriptions of the tasks completed in this project:
 
 1. MyList
@@ -38,5 +38,5 @@ Created a class Square that inherits from Rectangle.
 11. Square #2
 Enhanced the class Square with more functionality.
 
-###AUTHOR
+### AUTHOR
 Josh Davis
