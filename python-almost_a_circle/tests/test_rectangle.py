@@ -6,6 +6,8 @@ from models.rectangle import Rectangle
 from models.base import Base
 from contextlib import redirect_stdout
 import io
+import json
+import os
 
 
 class TestRectangle(unittest.TestCase):
@@ -227,6 +229,37 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r1.width, 1)
         self.assertEqual(r1.height, 2)
 
-    
+    def test_save_to_file_None(self):
+        Rectangle.save_to_file(None)
+        with open("Rectangle.json", "r") as file:
+            self.assertEqual(file.read(), '[]')
+
+    def test_save_to_file_empty_list(self):
+        Rectangle.save_to_file([])
+        with open("Rectangle.json", "r") as file:
+            self.assertEqual(file.read(), '[]')
+
+    def test_save_to_file_rectangle_list(self):
+        r = Rectangle(1, 2)
+        Rectangle.save_to_file([r])
+        with open("Rectangle.json", "r") as file:
+            contents = json.load(file)
+            expected = [{"y": 0, "x": 0, "id": 1, "height": 2, "width": 1}]
+            self.assertListEqual(contents, expected)
+
+    def test_load_from_file_no_file(self):
+        if os.path.exists("Rectangle.json"):
+            os.remove("Rectangle.json")
+        rectangles = Rectangle.load_from_file()
+        self.assertEqual(rectangles, [])
+
+    def test_load_from_file_with_file(self):
+        r = Rectangle(1, 2)
+        Rectangle.save_to_file([r])
+        rectangles = Rectangle.load_from_file()
+        self.assertEqual(len(rectangles), 1)
+        self.assertEqual(rectangles[0].width, 1)
+        self.assertEqual(rectangles[0].height, 2)
+
 if __name__ == "__main__":
     unittest.main()
