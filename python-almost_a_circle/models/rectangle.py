@@ -97,3 +97,12 @@ class Rectangle(Base):
         of the Rectangle instance."""
         return ("[Rectangle] ({}) {}/{} - {}/{}"
                 .format(self.id, self.x, self.y, self.width, self.height))
+
+    def update(self, *args):
+        """This method updates the attributes of the Rectangle instance
+        as per the arguments provided.
+        """
+        attributes = ['id', 'width', 'height', 'x', 'y']
+        for i, arg in enumerate(args):
+            if i < len(attributes):
+                setattr(self, attributes[i], arg)
