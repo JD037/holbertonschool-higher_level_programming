@@ -177,5 +177,56 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r1.x, 3)
         self.assertEqual(r1.y, 4)
 
+    def test_update_kwargs_id(self):
+        r1 = Rectangle(10, 10, 10, 10)
+        r1.update(id=89)
+        self.assertEqual(r1.id, 89)
+
+    def test_update_kwargs_id_width(self):
+        r1 = Rectangle(10, 10, 10, 10)
+        r1.update(id=89, width=1)
+        self.assertEqual(r1.id, 89)
+        self.assertEqual(r1.width, 1)
+
+    def test_update_kwargs_id_width_height(self):
+        r1 = Rectangle(10, 10, 10, 10)
+        r1.update(id=89, width=1, height=2)
+        self.assertEqual(r1.id, 89)
+        self.assertEqual(r1.width, 1)
+        self.assertEqual(r1.height, 2)
+
+    def test_update_kwargs_id_width_height_x(self):
+        r1 = Rectangle(10, 10, 10, 10)
+        r1.update(id=89, width=1, height=2, x=3)
+        self.assertEqual(r1.id, 89)
+        self.assertEqual(r1.width, 1)
+        self.assertEqual(r1.height, 2)
+        self.assertEqual(r1.x, 3)
+
+    def test_update_kwargs_id_width_height_x_y(self):
+        r1 = Rectangle(10, 10, 10, 10)
+        r1.update(id=89, width=1, height=2, x=3, y=4)
+        self.assertEqual(r1.id, 89)
+        self.assertEqual(r1.width, 1)
+        self.assertEqual(r1.height, 2)
+        self.assertEqual(r1.x, 3)
+        self.assertEqual(r1.y, 4)
+
+    def test_create_id(self):
+        r1 = Rectangle.create(id=89)
+        self.assertEqual(r1.id, 89)
+
+    def test_create_id_width(self):
+        r1 = Rectangle.create(id=89, width=1)
+        self.assertEqual(r1.id, 89)
+        self.assertEqual(r1.width, 1)
+
+    def test_create_id_width_height(self):
+        r1 = Rectangle.create(id=89, width=1, height=2)
+        self.assertEqual(r1.id, 89)
+        self.assertEqual(r1.width, 1)
+        self.assertEqual(r1.height, 2)
+
+    
 if __name__ == "__main__":
     unittest.main()
