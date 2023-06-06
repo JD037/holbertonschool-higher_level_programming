@@ -75,5 +75,9 @@ class TestRectangle(unittest.TestCase):
         r = Rectangle(1, 2, 3, 4, 5)
         self.assertEqual(r.id, 5)
 
+    def test_rectangle_negative_width(self):
+        with self.assertRaises(ValueError):
+            r = Rectangle(-1, 2)
+
 if __name__ == "__main__":
     unittest.main()
