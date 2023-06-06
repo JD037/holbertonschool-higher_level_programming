@@ -261,6 +261,10 @@ class TestRectangle(unittest.TestCase):
         Rectangle.save_to_file([])
         with open("Rectangle.json", "r") as file:
             self.assertEqual(file.read(), "[]")
+        os.remove("Rectangle.json")  # cleanup: remove the file after the test
+        with self.assertRaises(FileNotFoundError):
+            with open("Rectangle.json", "r") as file:
+                pass  # just try to open the file, expecting it to not exist
 
 if __name__ == "__main__":
     unittest.main()
