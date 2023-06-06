@@ -4,6 +4,8 @@
 import unittest
 from models.rectangle import Rectangle
 from models.base import Base
+from contextlib import redirect_stdout
+import io
 
 
 class TestRectangle(unittest.TestCase):
@@ -98,6 +100,38 @@ class TestRectangle(unittest.TestCase):
     def test_rectangle_negative_y(self):
         with self.assertRaises(ValueError):
             r = Rectangle(1, 2, 3, -4)
+
+    def test_rectangle_area(self):
+        r = Rectangle(5, 10)
+        self.assertEqual(r.area(), 50)
+
+    def test_rectangle_str(self):
+        r = Rectangle(1, 2, 3, 4, 99)
+        self.assertEqual(str(r), "[Rectangle] (99) 3/4 - 1/2")
+
+    def test_display_no_xy(self):
+        r = Rectangle(4, 6)
+        expected_output = "####\n" * 6
+        with io.StringIO() as buf, redirect_stdout(buf):
+            r.display()
+            output = buf.getvalue()
+        self.assertEqual(output, expected_output)
+
+    def test_display_no_y(self):
+        r = Rectangle(4, 6, 2)
+        expected_output = "  ####\n" * 6
+        with io.StringIO() as buf, redirect_stdout(buf):
+            r.display()
+            output = buf.getvalue()
+        self.assertEqual(output, expected_output)
+
+    def test_display(self):
+        with io.StringIO() as buf, redirect_stdout(buf):
+            r1 = Rectangle(3, 2, 1, 1)
+            r1.display()
+            output = buf.getvalue()
+        expected_output = "\n ###\n ###\n"
+        self.assertEqual(output, expected_output)
 
 if __name__ == "__main__":
     unittest.main()
