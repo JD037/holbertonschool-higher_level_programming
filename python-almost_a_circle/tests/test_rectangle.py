@@ -133,5 +133,49 @@ class TestRectangle(unittest.TestCase):
         expected_output = "\n ###\n ###\n"
         self.assertEqual(output, expected_output)
 
+    def test_to_dictionary(self):
+        r1 = Rectangle(10, 2, 1, 9, 1)
+        self.assertEqual(r1.to_dictionary(), {'id': 1, 'width': 10, 'height': 2, 'x': 1, 'y': 9})
+
+    def test_update(self):
+        r1 = Rectangle(10, 10, 10, 10)
+        r1.update(89)
+        self.assertEqual(r1.id, 89)
+
+    def test_update_id(self):
+        r1 = Rectangle(10, 10, 10, 10)
+        r1.update(89)
+        self.assertEqual(r1.id, 89)
+
+    def test_update_id_width(self):
+        r1 = Rectangle(10, 10, 10, 10)
+        r1.update(89, 1)
+        self.assertEqual(r1.id, 89)
+        self.assertEqual(r1.width, 1)
+
+    def test_update_id_width_height(self):
+        r1 = Rectangle(10, 10, 10, 10)
+        r1.update(89, 1, 2)
+        self.assertEqual(r1.id, 89)
+        self.assertEqual(r1.width, 1)
+        self.assertEqual(r1.height, 2)
+
+    def test_update_id_width_height_x(self):
+        r1 = Rectangle(10, 10, 10, 10)
+        r1.update(89, 1, 2, 3)
+        self.assertEqual(r1.id, 89)
+        self.assertEqual(r1.width, 1)
+        self.assertEqual(r1.height, 2)
+        self.assertEqual(r1.x, 3)
+
+    def test_update_id_width_height_x_y(self):
+        r1 = Rectangle(10, 10, 10, 10)
+        r1.update(89, 1, 2, 3, 4)
+        self.assertEqual(r1.id, 89)
+        self.assertEqual(r1.width, 1)
+        self.assertEqual(r1.height, 2)
+        self.assertEqual(r1.x, 3)
+        self.assertEqual(r1.y, 4)
+
 if __name__ == "__main__":
     unittest.main()
