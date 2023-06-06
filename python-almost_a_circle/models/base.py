@@ -55,3 +55,18 @@ class Base:
         filename = cls.__name__ + '.json'
         with open(filename, 'w') as file:
             file.write(cls.to_json_string(list_dicts))
+
+    @classmethod
+    def create(cls, **dictionary):
+        """
+        Returns an instance with all attributes already set
+        """
+        # Creating a dummy instance for Rectangle or Square
+        if cls.__name__ == "Rectangle":
+            dummy = cls(1, 1)
+        elif cls.__name__ == "Square":
+            dummy = cls(1)
+
+        # Updating the dummy instance with the dictionary values
+        dummy.update(**dictionary)
+        return dummy
