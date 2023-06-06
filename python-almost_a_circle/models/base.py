@@ -4,6 +4,7 @@ This module contains the Base class
 This class will be the base of all other classes in the project.
 The goal of it is to manage id attribute in all your future classes
 """
+import os
 import json
 
 
@@ -70,3 +71,15 @@ class Base:
         # Updating the dummy instance with the dictionary values
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """returns a list of instances"""
+        filename = cls.__name__ + ".json"
+        if not os.path.isfile(filename):
+            return []
+
+        with open(filename, 'r') as file:
+            instances_dict = cls.from_json_string(file.read())
+
+        return [cls.create(**instance) for instance in instances_dict]
