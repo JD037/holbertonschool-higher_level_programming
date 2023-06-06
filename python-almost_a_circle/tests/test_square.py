@@ -44,6 +44,36 @@ class TestSquare(unittest.TestCase):
         with self.assertRaises(TypeError):
             s4 = Square("hi", [], {}, 12)
 
+    def test_square_1(self):
+        s = Square(1)
+        self.assertEqual(s.size, 1)
+
+    def test_square_2(self):
+        s = Square(1, 2)
+        self.assertEqual(s.size, 1)
+        self.assertEqual(s.x, 2)
+
+    def test_square_3(self):
+        s = Square(1, 2, 3)
+        self.assertEqual(s.size, 1)
+        self.assertEqual(s.x, 2)
+        self.assertEqual(s.y, 3)
+
+    def test_square_invalid_size_type(self):
+        with self.assertRaises(TypeError):
+            Square("1")
+
+    def test_square_invalid_x_type(self):
+        with self.assertRaises(TypeError):
+            Square(1, "2")
+
+    def test_square_invalid_y_type(self):
+        with self.assertRaises(TypeError):
+            Square(1, 2, "3")
+
+    def test_square_invalid_id(self):
+        s = Square(1, 2, 3, 4)
+        self.assertEqual(s.id, 4)
 
 if __name__ == "__main__":
     unittest.main()
