@@ -261,5 +261,11 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(rectangles[0].width, 1)
         self.assertEqual(rectangles[0].height, 2)
 
+    def test_save_to_file_empty_list(self):
+        """Test save_to_file with an empty list"""
+        Rectangle.save_to_file([])
+        with open("Rectangle.json", "r") as file:
+            self.assertEqual(file.read(), "[]")
+
 if __name__ == "__main__":
     unittest.main()
