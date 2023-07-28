@@ -1,10 +1,10 @@
 #!/usr/bin/node
 
 // Get the first argument
-let arg = process.argv[2];
+const arg = process.argv[2];
 
 // Attempt to convert the argument to an integer
-let num = parseInt(arg);
+const num = parseInt(arg);
 
 // Check if the conversion was successful and print the result
 if (isNaN(num)) {
