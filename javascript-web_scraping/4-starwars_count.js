@@ -10,9 +10,9 @@ request(apiUrl, (error, response, body) => {
     const films = JSON.parse(body).results;
     for (const film of films) {
       for (const character of film.characters) {
-        if (character.endsWith('/18/')) {  // Checks if the character's URL ends with "/18/" which would mean it's Wedge Antilles.
+        if (character.endsWith('/18/')) { // Checks if the character's URL ends with "/18/" which would mean it's Wedge Antilles.
           count++;
-          break;  // Breaks out of the inner loop once Wedge Antilles is found in the current film.
+          break; // Breaks out of the inner loop once Wedge Antilles is found in the current film.
         }
       }
     }
