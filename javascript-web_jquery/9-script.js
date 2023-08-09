@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    const url = 'https://stefanbohacek.com/hellosalut/?lang=fr';
+    const url = 'https://hellosalut.stefanbohacek.dev/?lang=fr';
     $.getJSON(url, function (data) {
       $('#hello').text(data.hello);
     });
